@@ -2,13 +2,14 @@
 
 mkdir .termux/
 echo -e "extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > .termux/termux.properties
+termux-reload-settings
 echo "Keys set up properly."
 
 cd
 if [ "$1" != "-p" ]
 then
-if [ ! -f kde_ubuntu.tar.gz ]
-then
+  if [ ! -f kde_ubuntu.tar.gz ]
+  then
     echo "
     if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
     then
@@ -16,7 +17,7 @@ then
         rm -rf kde_ubuntu.tar.gz
         wget -O kde_ubuntu.tar.gz http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
     fi
-fi
+  fi
 pkg update -y
 pkg install proot -y && pkg install openssh -y && pkg install tar -y && pkg install nano -y && pkg install git -y
 cd
