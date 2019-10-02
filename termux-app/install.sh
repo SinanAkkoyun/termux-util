@@ -6,7 +6,7 @@ pkg install proot openssh tar wget git -y > /dev/null
 echo "Done."
 
 
-mkdir .termux/ > /dev/null
+mkdir .termux/ 2> /dev/null
 echo -e "extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > .termux/termux.properties
 termux-reload-settings
 echo "Keys set up properly."
