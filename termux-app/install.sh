@@ -66,7 +66,7 @@ do
         then
             echo "$file : $dest : $(pwd)"
             chmod +x $file
-            rm -rf $file 2>/dev/null
+            rm -rf $dest 2>/dev/null
             mkdir $dest 2>/dev/null
             mv $file $dest
             echo "Moved $file to $dest."
@@ -82,7 +82,7 @@ for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
         then
             echo "$file : $dest : $(pwd)"
             chmod +x $file
-            rm -rf $file 2>/dev/null
+            rm -rf $dest 2>/dev/null
             mkdir $dest 2>/dev/null
             mv $file $dest
             echo "Moved $file to $dest."
