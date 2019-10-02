@@ -52,35 +52,35 @@ if [ -d "termux-util" ]                                                         
 
 for file in termux-util/* termux-util/.[^.]*
 do
-    if [ ! -d "$file" ]
-    then
-        dest="$(head -n 1 $file | cut -d "#" -f 2)"
-        if [ "$(cut -c 1 <<< $dest)" != "!" ]
-        then
-            echo "$file : $dest : $(pwd)"
-            chmod +x $file
-            rm -rf $dest 2>/dev/null
-            mkdir $dest 2>/dev/null
-            mv $file $dest
-            echo "Moved $file to $dest."
-        fi
-    fi
+if [ ! -d "$file" ]
+then
+dest="$(head -n 1 $file | cut -d "#" -f 2)"
+if [ "$(cut -c 1 <<< $dest)" != "!" ]
+then
+echo "$file : $dest : $(pwd)"
+chmod +x $file
+rm -rf $dest 2>/dev/null
+mkdir $dest 2>/dev/null
+mv $file $dest
+echo "Moved $file to $dest."
+fi
+fi
 done
 
 for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
-    if [ ! -d "$file" ]
-    then
-        dest="$(head -n 1 $file | cut -d "#" -f 2)"
-        if [ "$(cut -c 1 <<< "$dest")" != "!" ]
-        then
-            echo "$file : $dest : $(pwd)"
-            chmod +x $file
-            rm -rf $dest 2>/dev/null
-            mkdir $dest 2>/dev/null
-            mv $file $dest
-            echo "Moved $file to $dest."
-        fi
-    fi
+if [ ! -d "$file" ]
+then
+dest="$(head -n 1 $file | cut -d "#" -f 2)"
+if [ "$(cut -c 1 <<< "$dest")" != "!" ]
+then
+echo "$file : $dest : $(pwd)"
+chmod +x $file
+rm -rf $dest 2>/dev/null
+mkdir $dest 2>/dev/null
+mv $file $dest
+echo "Moved $file to $dest."
+fi
+fi
 done
 
 echo "Done! ./start-ubuntu.sh to log into linux!"
