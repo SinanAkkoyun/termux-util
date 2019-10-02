@@ -10,7 +10,7 @@ if [ "$1" != "-p" ]
 then
   if [ ! -f kde_ubuntu.tar.gz ]
   then
-    echo "
+    echo "File kde_ubuntu.tar.gz does not exist."
     if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
     then
         echo "Downloading kde_ubuntu.tar.gz"
