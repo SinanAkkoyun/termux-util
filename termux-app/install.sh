@@ -52,10 +52,8 @@ fi
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
-cd termux-util
-for file in * .[^.]*
+for file in termux-util/[^.]*
 do
-    cd
     if [ ! -d $file ]
     then
         dest="$(head -n 1 $file | cut -d "#" -f 2)"
@@ -68,10 +66,8 @@ do
         fi
     fi
 done
-cd termux-app
-for file in * .[^.]*
-do
-    cd
+
+for file in termux-util/termux-app/[^.]*
     if [ ! -d $file ]
     then
         dest="$(head -n 1 $file | cut -d "#" -f 2)"
