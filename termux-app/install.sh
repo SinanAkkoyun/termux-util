@@ -71,10 +71,10 @@ git clone https://github.com/SinanAkkoyun/termux-util/
 
 for file in termux-util/*
 do
-    if [ ! -p $file ]
+    if [ ! -d $file ]
     then
-        dest=$(head -n 1 $file | cut -d "#" -f 2)
-        if [ $(cut -c 1 <<< "$dest") != "!" ]
+        dest="$(head -n 1 $file | cut -d "#" -f 2)"
+        if [ "$(cut -c 1 <<< "$dest")" != "!" ]
         then
             chmod +x $file
             mv $file $dest
