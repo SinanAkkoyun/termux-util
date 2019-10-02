@@ -2,41 +2,19 @@
 cd
 if [ "$1" != "--patch" ] || [ "$1" != "-p" ]
 then
-wget http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
+if [ ! -f kde_ubuntu.tar.gz ]
+then
+    if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
+    then
+        rm -rf kde_ubuntu.tar.gz
+        wget -O kde_ubuntu.tar.gz http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
+    fi
+fi
 pkg update
-pkg install proot -y && pkg install openssh -y && pkg install tar -y && pkg install nano -y
-echo " "
-echo " "
-echo "-----------------------------------------------------------"
-echo " "
-echo "|  NOTE THAT ALL THE PREVIOUS UBUNTU DATA WILL BE ERASED  |"
-echo " "
-echo "---------------------------------------------------------- "
-echo " "
-echo " "
-echo  "Allow the Storage permission to termux"
-echo " "
-termux-setup-storage
-sleep 7
-
+pkg install proot -y && pkg install openssh -y && pkg install tar -y && pkg install nano -y && pkg install git -y
 cd
 echo "Allowing permission to files"
 chmod +x kde_ubuntu.tar.gz
-echo " "
-
-echo "Verifying MD5 Checksum "
-echo " "
-echo "ORIGINAL FILE CHECKSUM::"
-echo " "
-echo "5bfc3ba6dcfec7abb0420b613f8acc0e  kde_ubuntu.tar.gz "
-echo " "
-echo " "
-echo "DOWNLOADED FILE CHECKSUM::"
-echo " "
-echo "$(md5sum kde_ubuntu.tar.gz)"
-echo " "
-echo "IF BOTH CHECKSUMS DON'T MATCH CONTACT SUPPORT"
-echo " "
 echo " "
 
 echo "Extracting tar files"
