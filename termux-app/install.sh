@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-
+cd
 if [ "$1" != "--patch" ] || [ "$1" != "-p" ]
 then
 wget http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
@@ -87,3 +87,19 @@ do
         fi
     fi
 done
+for file in termux-util/termux-app/*
+do
+    if [ ! -d $file ]
+    then
+        dest="$(head -n 1 $file | cut -d "#" -f 2)"
+        if [ "$(cut -c 1 <<< "$dest")" != "!" ]
+        then
+            chmod +x $file
+            mkdir $dest
+            mv $file $dest
+            echo "Moved $file to $dest."
+        fi
+    fi
+done
+
+echo "Done! ./start-ubuntu.sh to log into linux!"
