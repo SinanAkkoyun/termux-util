@@ -68,6 +68,7 @@ fi
 done
 
 for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
+do
 if [ ! -d "$file" ]
 then
 dest="$(head -n 1 $file | cut -d "#" -f 2)"
