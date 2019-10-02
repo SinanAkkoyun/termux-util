@@ -1,4 +1,4 @@
-#ubuntu-fs/bin/ps
+#ubuntu-fs/usr/sbin/
 #!/bin/bash
 serv="null"
 case $1 in
