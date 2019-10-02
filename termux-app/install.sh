@@ -1,4 +1,4 @@
-#.                                                                                                        #!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 cd
 if [ "$1" != "-p" ]
 then
@@ -16,14 +16,16 @@ pkg install proot -y && pkg install openssh -y && pkg install tar -y && pkg inst
 cd
 echo "Allowing permission to files"
 chmod +x kde_ubuntu.tar.gz
-echo " "                                                                                                  
+echo " "
 echo "Extracting tar files"
 tar xf kde_ubuntu.tar.gz
-                                                                                                          echo "Checking for file integrity"
-                                                                                                          FILE=start-ubuntu.sh
+
+echo "Checking for file integrity"
+FILE=start-ubuntu.sh
 if test -f "$FILE"; then
-    echo "Boot script present"                                                                                echo " "
-fi                                                                                                        
+    echo "Boot script present"
+    echo " "
+fi
 FD=ubuntu-fs
 if [ -d "$FD" ]; then
   echo "Boot container present...Files unchecked"
@@ -31,7 +33,8 @@ if [ -d "$FD" ]; then
 fi
 
 UFD=ubuntu-binds
-if [ -d "$UFD" ]; then                                                                                      echo "Sub-Boot container present"
+if [ -d "$UFD" ]; then
+echo "Sub-Boot container present"
 fi                                                                                                                                                                                                                  echo "Applying Patches"
 rm -rf ubuntu-fs/root/.vnc/passwd
 rm -rf ubuntu-fs/usr/local/bin/vncserver-start
@@ -52,36 +55,36 @@ if [ -d "termux-util" ]                                                         
 
 for file in termux-util/* termux-util/.[^.]*
 do
-if [ ! -d "$file" ]
-then
-dest="$(head -n 1 $file | cut -d "#" -f 2)"
-if [ "$(cut -c 1 <<< $dest)" != "!" ]
-then
-echo "$file : $dest : $(pwd)"
-chmod +x $file
-rm -rf $dest 2>/dev/null
-mkdir $dest 2>/dev/null
-mv $file $dest
-echo "Moved $file to $dest."
-fi
-fi
+    if [ ! -d "$file" ]
+    then
+        dest="$(head -n 1 $file | cut -d "#" -f 2)"
+        if [ "$(cut -c 1 <<< $dest)" != "!" ]
+        then
+            echo "$file : $dest : $(pwd)"
+            chmod +x $file
+            rm -rf $dest 2>/dev/null
+            mkdir $dest 2>/dev/null
+            mv $file $dest
+            echo "Moved $file to $dest."
+        fi
+    fi
 done
 
 for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
 do
-if [ ! -d "$file" ]
-then
-dest="$(head -n 1 $file | cut -d "#" -f 2)"
-if [ "$(cut -c 1 <<< "$dest")" != "!" ]
-then
-echo "$file : $dest : $(pwd)"
-chmod +x $file
-rm -rf $dest 2>/dev/null
-mkdir $dest 2>/dev/null
-mv $file $dest
-echo "Moved $file to $dest."
-fi
-fi
+    if [ ! -d "$file" ]
+    then
+        dest="$(head -n 1 $file | cut -d "#" -f 2)"
+        if [ "$(cut -c 1 <<< "$dest")" != "!" ]
+        then
+            echo "$file : $dest : $(pwd)"
+            chmod +x $file
+            rm -rf $dest 2>/dev/null
+            mkdir $dest 2>/dev/null
+            mv $file $dest
+            echo "Moved $file to $dest."
+        fi
+    fi
 done
 
 echo "Done! ./start-ubuntu.sh to log into linux!"
