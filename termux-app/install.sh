@@ -22,7 +22,6 @@ then
         echo "Downloading kde_ubuntu.tar.gz"
         rm -rf kde_ubuntu.tar.gz
         wget -O kde_ubuntu.tar.gz http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
-    fi
   fi
   fi
 cd
