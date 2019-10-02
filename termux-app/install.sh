@@ -14,6 +14,8 @@ echo "Keys set up properly."
 cd
 if [ "$1" != "-p" ]
 then
+  if [ "$1" != "--skip-hash" ]
+  then
   if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
   then
         echo "File kde_ubuntu.tar.gz hashes don't match."
@@ -21,6 +23,7 @@ then
         rm -rf kde_ubuntu.tar.gz
         wget -O kde_ubuntu.tar.gz http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
     fi
+  fi
   fi
 cd
 echo "Allowing permission to files"
