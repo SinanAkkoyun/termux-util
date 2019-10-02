@@ -1,2 +1,3 @@
+#ubuntu-fs/usr/local/bin/termux
 #!/bin/bash
 ssh localhost -p 8022 "$@"
