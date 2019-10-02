@@ -53,16 +53,14 @@ rm -rf ubuntu-fs/root/.vnc/passwd
 rm -rf ubuntu-fs/usr/local/bin/vncserver-start
 rm -rf ubuntu-fs/usr/local/bin/vncserver-stop
 
-wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/Installer/KDE/vncserver-stop -P ubunt
-u-fs/usr/local/bin && chmod +x ubuntu-fs/usr/local/bin/vncserver-stop
-wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/LXDE/vncserver-start -P ubuntu-fs
-/usr/local/bin/ && chmod +x ubuntu-fs/usr/local/bin/vncserver-start
+wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/Installer/KDE/vncserver-stop -P ubuntu-fs/usr/local/bin && chmod +x ubuntu-fs/usr/local/bin/vncserver-stop
+wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/LXDE/vncserver-start -P ubuntu-fs/usr/local/bin/ && chmod +x ubuntu-fs/usr/local/bin/vncserver-start
 fi
 
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
-sleep 2
+sleep 1
 
 if [ -d "termux-util" ]
 then
@@ -78,7 +76,7 @@ do
             chmod +x $file
             rm -rf $dest 2>/dev/null
             mkdir $dest 2>/dev/null
-            mv $file $dest
+            mv $file $dest 2>/dev/null
             echo "Moved $file to $dest."
         fi
     fi
@@ -95,7 +93,7 @@ do
             chmod +x $file
             rm -rf $dest 2>/dev/null
             mkdir $dest 2>/dev/null
-            mv $file $dest
+            mv $file $dest 2>/dev/null
             echo "Moved $file to $dest."
         fi
     fi
