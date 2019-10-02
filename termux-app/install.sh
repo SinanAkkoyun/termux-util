@@ -16,8 +16,7 @@ if [ "$1" != "-p" ]
 then
   if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
   then
-    echo "File kde_ubuntu.tar.gz hashes don't match."
-    then
+        echo "File kde_ubuntu.tar.gz hashes don't match."
         echo "Downloading kde_ubuntu.tar.gz"
         rm -rf kde_ubuntu.tar.gz
         wget -O kde_ubuntu.tar.gz http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
