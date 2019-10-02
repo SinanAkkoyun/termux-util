@@ -1,0 +1,37 @@
+#!/bin/bash
+serv="null"
+case $1 in
+        ssh)
+                serv="sshd"
+                case $2 in
+                        start)
+                                termux sshd
+                                echo "Service SSH succesfully started!"
+                                ;;
+                        stop)
+                                termux pkill sshd 2>/dev/null
+                                echo "Service SSH succesfully stopped!"
+                                ;;
+                        status)
+                                ps aux > /tmp/ps.txt
+                                if [[ $(cat /tmp/ps.txt) == *"0 sshd"* ]]
+                                then
+                                        echo "Service SSH is running."
+                                else
+                                        echo "Service SSH is not running."
+                                fi
+                                rm /tmp/ps.txt
+                                ;;
+                        *)
+                                echo "service ssh start/stop/status"
+                                ;;
+                esac
+                ;;
+        apache2)
+                serv="apache2"
+                service.old $@
+                ;;
+        *)
+                echo "available services: ssh, apache2"
+                ;;
+esac
