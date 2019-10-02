@@ -2,11 +2,11 @@
 
 echo "Installing pkgs"
 pkg update -y > /dev/null
-pkg install proot openssh tar wget git -y
+pkg install proot openssh tar wget git -y > /dev/null
 echo "Done."
 
 
-mkdir .termux/
+mkdir .termux/ > /dev/null
 echo -e "extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > .termux/termux.properties
 termux-reload-settings
 echo "Keys set up properly."
