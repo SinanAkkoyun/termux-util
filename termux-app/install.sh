@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+if [ "$1" != "--patch" ] || [ "$1" != "-p" ]
+then
 wget http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
 pkg update
 pkg install proot -y && pkg install openssh -y && pkg install tar -y && pkg install nano -y
@@ -66,7 +68,7 @@ rm -rf ubuntu-fs/usr/local/bin/vncserver-stop
 
 wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/Installer/KDE/vncserver-stop -P ubuntu-fs/usr/local/bin && chmod +x ubuntu-fs/usr/local/bin/vncserver-stop
 wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/LXDE/vncserver-start -P ubuntu-fs/usr/local/bin/ && chmod +x ubuntu-fs/usr/local/bin/vncserver-start
-
+fi
 
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
