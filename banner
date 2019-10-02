@@ -1,0 +1,8 @@
+#!/bin/bash
+#toilet Sinan Akkoyun -f smblock --gay
+title="SinanAkkoyun"
+clear
+printf "%*s
+" $(((${#title}+$(tput cols))/2)) "$title"
+title="[$(date +"%d-%m-%y")]"
+printf "%*s\n" $(((${#title}+$(tput cols))/2)) "$title"
