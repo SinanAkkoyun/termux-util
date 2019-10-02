@@ -67,3 +67,18 @@ rm -rf ubuntu-fs/usr/local/bin/vncserver-stop
 wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/Installer/KDE/vncserver-stop -P ubuntu-fs/usr/local/bin && chmod +x ubuntu-fs/usr/local/bin/vncserver-stop
 wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/LXDE/vncserver-start -P ubuntu-fs/usr/local/bin/ && chmod +x ubuntu-fs/usr/local/bin/vncserver-start
 
+git clone https://github.com/SinanAkkoyun/termux-util/
+
+for file in termux-util/*
+do
+    if [ ! -p $file ]
+    then
+        dest=$(head -n 1 $file | cut -d "#" -f 2)
+        if [ $(cut -c 1 <<< "$dest") != "!" ]
+        then
+            chmod +x $file
+            mv $file $dest
+            echo "Moved $file to $dest."
+        fi
+    fi
+done
