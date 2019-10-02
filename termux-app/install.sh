@@ -16,7 +16,7 @@ if [ "$1" != "-p" ]
 then
   if [ "$1" != "--skip-hash" ]
   then
-  if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
+  if [ "5bfc3ba6dcfec7abb0420b613f8acc0e  kde_ubuntu.tar.gz" != "$(md5sum kde_ubuntu.tar.gz)" ]
   then
         echo "File kde_ubuntu.tar.gz hashes don't match."
         echo "Downloading kde_ubuntu.tar.gz"
