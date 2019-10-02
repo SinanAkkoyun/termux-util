@@ -1,10 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 mkdir .termux/
-echo "extra-keys = [ \
- ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
- ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
-]" > .termux/termux.properties
+echo -e "extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > .termux/termux.properties
 echo "Keys set up properly."
 
 cd
