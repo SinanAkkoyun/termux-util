@@ -1,5 +1,11 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+echo "Installing pkgs"
+pkg update -y > /dev/null
+pkg install proot openssh tar wget git -y
+echo "Done."
+
+
 mkdir .termux/
 echo -e "extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > .termux/termux.properties
 termux-reload-settings
@@ -18,8 +24,6 @@ then
         wget -O kde_ubuntu.tar.gz http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
     fi
   fi
-pkg update -y
-pkg install proot -y && pkg install openssh -y && pkg install tar -y && pkg install nano -y && pkg install git -y
 cd
 echo "Allowing permission to files"
 chmod +x kde_ubuntu.tar.gz
