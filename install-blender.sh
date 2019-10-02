@@ -1,3 +1,4 @@
+#ubuntu-fs/root/
 cd /usr/local
 rm -r blender-2.80-linux-glibc217-x86_64
 wget https://ftp.halifax.rwth-aachen.de/blender/release/Blender2.80/blender-2.80-linux-glibc217-x86_64.tar.bz2
