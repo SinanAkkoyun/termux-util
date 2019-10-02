@@ -53,6 +53,7 @@ rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
 shopt -u dotglob
+set -e
 
 for file in termux-util/* termux-util/.[^.]*
 do
