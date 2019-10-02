@@ -1,10 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-extra-keys = [ \
- ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
- ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
-]
-
 echo "Keys set up properly."
 
 cd
