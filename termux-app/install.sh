@@ -51,7 +51,7 @@ fi
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
-for file in termux-util/*
+for file in termux-util/* .[^.]*
 do
     if [ ! -d $file ]
     then
@@ -65,7 +65,7 @@ do
         fi
     fi
 done
-for file in termux-util/termux-app/*
+for file in termux-util/termux-app/* .[^.]*
 do
     if [ ! -d $file ]
     then
