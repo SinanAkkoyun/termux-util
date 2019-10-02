@@ -14,10 +14,9 @@ echo "Keys set up properly."
 cd
 if [ "$1" != "-p" ]
 then
-  if [ ! -f kde_ubuntu.tar.gz ]
+  if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
   then
-    echo "File kde_ubuntu.tar.gz does not exist."
-    if [ "5bfc3ba6dcfec7abb0420b613f8acc0e" != "$(md5sum kde_ubuntu.tar.gz)" ]
+    echo "File kde_ubuntu.tar.gz hashes don't match."
     then
         echo "Downloading kde_ubuntu.tar.gz"
         rm -rf kde_ubuntu.tar.gz
