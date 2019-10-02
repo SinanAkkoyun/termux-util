@@ -35,7 +35,8 @@ fi
 UFD=ubuntu-binds
 if [ -d "$UFD" ]; then
 echo "Sub-Boot container present"
-fi                                                                                                                                                                                                                  echo "Applying Patches"
+fi
+echo "Applying Patches"
 rm -rf ubuntu-fs/root/.vnc/passwd
 rm -rf ubuntu-fs/usr/local/bin/vncserver-start
 rm -rf ubuntu-fs/usr/local/bin/vncserver-stop
@@ -46,12 +47,13 @@ wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/LXDE/vn
 /usr/local/bin/ && chmod +x ubuntu-fs/usr/local/bin/vncserver-start
 fi
 
-rm -rf termux-util                                                                                        git clone https://github.com/SinanAkkoyun/termux-util/
-                                                                                                          shopt -u dotglob
+rm -rf termux-util
+git clone https://github.com/SinanAkkoyun/termux-util/
 
 sleep 2
 
-if [ -d "termux-util" ]                                                                                   then
+if [ -d "termux-util" ]
+then
 
 for file in termux-util/* termux-util/.[^.]*
 do
