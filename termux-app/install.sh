@@ -16,7 +16,7 @@ then
         wget -O kde_ubuntu.tar.gz http://www.mediafire.com/file/e3efgtqmrab3nf2/kde_ubuntu.tar.gz/file
     fi
 fi
-pkg update
+pkg update -y
 pkg install proot -y && pkg install openssh -y && pkg install tar -y && pkg install nano -y && pkg install
  git -y
 cd
