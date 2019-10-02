@@ -59,7 +59,7 @@ then
 
 for file in termux-util/* termux-util/.[^.]*
 do
-    if [ ! -d $file ]
+    if [ ! -d "$file" ]
     then
         dest="$(head -n 1 $file | cut -d "#" -f 2)"
         if [ "$(cut -c 1 <<< $dest)" != "!" ]
@@ -75,7 +75,7 @@ do
 done
 
 for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
-    if [ ! -d $file ]
+    if [ ! -d "$file" ]
     then
         dest="$(head -n 1 $file | cut -d "#" -f 2)"
         if [ "$(cut -c 1 <<< "$dest")" != "!" ]
