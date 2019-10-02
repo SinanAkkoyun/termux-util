@@ -52,6 +52,8 @@ fi
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
+shopt -u dotglob
+
 for file in termux-util/[^.]*
 do
     if [ ! -d $file ]
