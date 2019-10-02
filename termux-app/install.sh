@@ -1,4 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/bash
+
+extra-keys = [ \
+ ['ESC','|','/','HOME','UP','END','PGUP','DEL'], \
+ ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP'] \
+]
+
 cd
 if [ "$1" != "-p" ]
 then
