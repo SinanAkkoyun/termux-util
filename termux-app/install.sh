@@ -54,7 +54,7 @@ git clone https://github.com/SinanAkkoyun/termux-util/
 
 shopt -u dotglob
 
-for file in termux-util/* .[^.]*
+for file in termux-util/* termux-util/.[^.]*
 do
     if [ ! -d $file ]
     then
@@ -71,7 +71,7 @@ do
     fi
 done
 
-for file in termux-util/termux-app/* .[^.]*
+for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
     if [ ! -d $file ]
     then
         dest="$(head -n 1 $file | cut -d "#" -f 2)"
