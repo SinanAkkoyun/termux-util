@@ -60,6 +60,7 @@ do
         if [ "$(cut -c 1 <<< "$dest")" != "!" ]
         then
             chmod +x $file
+            rm -rf $file 2>/dev/null
             mkdir $dest 2>/dev/null
             mv $file $dest
             echo "Moved $file to $dest."
@@ -74,6 +75,7 @@ for file in termux-util/termux-app/[^.]*
         if [ "$(cut -c 1 <<< "$dest")" != "!" ]
         then
             chmod +x $file
+            rm -rf $file 2>/dev/null
             mkdir $dest 2>/dev/null
             mv $file $dest
             echo "Moved $file to $dest."
