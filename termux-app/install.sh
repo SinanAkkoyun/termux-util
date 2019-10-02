@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 cd
-if [ "$1" != "--patch" ] || [ "$1" != "-p" ]
+if [ "$1" != "-p" ]
 then
 if [ ! -f kde_ubuntu.tar.gz ]
 then
