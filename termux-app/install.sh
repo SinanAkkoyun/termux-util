@@ -1,3 +1,4 @@
+#.
 #!/data/data/com.termux/files/usr/bin/bash
 cd
 if [ "$1" != "-p" ]
