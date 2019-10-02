@@ -53,7 +53,9 @@ rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
 shopt -u dotglob
-set -e
+
+if [ -d "termux-util" ]
+then
 
 for file in termux-util/* termux-util/.[^.]*
 do
@@ -89,3 +91,4 @@ for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
 done
 
 echo "Done! ./start-ubuntu.sh to log into linux!"
+fi
