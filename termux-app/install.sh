@@ -56,10 +56,12 @@ wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/Installer/K
 wget https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/APT/LXDE/vncserver-start -P ubuntu-fs/usr/local/bin/ && chmod +x ubuntu-fs/usr/local/bin/vncserver-start
 fi
 
+cd
+
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
-sleep 1
+sleep 5
 
 if [ -d "termux-util" ]
 then
@@ -83,7 +85,7 @@ done
 
 for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
 do
-    if [ ! -d "$file" ]
+    if [ ! -d "$file" ] && [ $file != *"*" ] && [[ ! $file =~ ".[^.]*" ]]
     then
         dest="$(head -n 1 $file | cut -d "#" -f 2)"
         if [ "$(cut -c 1 <<< "$dest")" != "!" ]
