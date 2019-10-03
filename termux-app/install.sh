@@ -62,6 +62,10 @@ fi
 
 cd
 
+ssh-keygen -t rsa
+cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+mv .ssh/id_rsa .ssh/id_rsa.pub ubuntu-fs/root/.ssh/
+
 if [ -d "termux-util" ]
 then
 
