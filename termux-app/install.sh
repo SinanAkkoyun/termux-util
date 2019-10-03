@@ -62,7 +62,7 @@ cd
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
 
-sleep 5
+cd
 
 if [ -d "termux-util" ]
 then
@@ -86,7 +86,7 @@ done
 
 for file in termux-util/termux-app/* termux-util/termux-app/.[^.]*
 do
-    if [ ! -d "$file" ] && [ $file != *"*" ] && [[ ! $file =~ ".[^.]*" ]]
+    if [ ! -d "$file" ] && [[ ! $file =~ "*" ]] && [[ ! $file =~ ".[^.]*" ]]
     then
         dest="$(head -n 1 $file | cut -d "#" -f 2)"
         if [ "$(cut -c 1 <<< "$dest")" != "!" ]
