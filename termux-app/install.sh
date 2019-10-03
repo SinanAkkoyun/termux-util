@@ -28,6 +28,7 @@ cd
 echo "Allowing permission to files"
 chmod +x kde_ubuntu.tar.gz
 echo " "
+rm -rf ubuntu-fs
 echo "Extracting tar files"
 tar xf kde_ubuntu.tar.gz
 
