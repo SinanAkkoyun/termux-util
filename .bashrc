@@ -98,6 +98,6 @@ fi
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
-export PS1="\[\]\[\]\u@\h\[\]:\[\]\w\[\]\$ "
-export PATH="/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games:/root/.bin/:/root/.bin/:/root/.bin/"
+export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ "
+export PATH="$PATH:/root/.bin/:/usr/local/blender/"
 banner
