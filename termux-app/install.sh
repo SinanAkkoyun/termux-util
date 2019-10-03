@@ -5,6 +5,9 @@ pkg update -y > /dev/null
 pkg install proot openssh tar wget git -y > /dev/null
 echo "Done."
 
+cd
+rm -rf termux-util
+git clone https://github.com/SinanAkkoyun/termux-util/
 
 mkdir .termux/ 2> /dev/null
 echo -e "extra-keys = [['ESC','|','/','HOME','UP','END','PGUP','DEL'], ['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN','BKSP']]" > .termux/termux.properties
@@ -59,11 +62,6 @@ fi
 
 cd
 
-rm -rf termux-util
-git clone https://github.com/SinanAkkoyun/termux-util/
-
-cd
-
 if [ -d "termux-util" ]
 then
 
@@ -76,9 +74,9 @@ do
         then
             echo "$file : $dest : $(pwd)"
             chmod +x $file
-            rm -rf $dest 2>/dev/null
+            #rm -rf $dest 2>/dev/null
             mkdir $dest 2>/dev/null
-            mv $file $dest 2>/dev/null
+            cp $file $dest 2>/dev/null
             echo "Moved $file to $dest."
         fi
     fi
@@ -93,9 +91,9 @@ do
         then
             echo "$file : $dest : $(pwd)"
             chmod +x $file
-            rm -rf $dest 2>/dev/null
+            #rm -rf $dest 2>/dev/null
             mkdir $dest 2>/dev/null
-            mv $file $dest 2>/dev/null
+            cp $file $dest 2>/dev/null
             echo "Moved $file to $dest."
         fi
     fi
