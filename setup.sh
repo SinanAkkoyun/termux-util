@@ -1,4 +1,4 @@
-#ubuntu-fs/root/setup.sh
+#ubuntu-fs/root/
 #!/bin/bash
 apt update
 apt upgrade -y
