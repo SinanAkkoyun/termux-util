@@ -5,6 +5,9 @@ pkg update -y > /dev/null
 pkg install proot openssh tar wget git -y > /dev/null
 echo "Done."
 
+echo "Passwd setup:"
+passwd
+
 cd
 rm -rf termux-util
 git clone https://github.com/SinanAkkoyun/termux-util/
