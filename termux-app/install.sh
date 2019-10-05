@@ -69,6 +69,8 @@ ssh-keygen -t rsa
 cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 mv .ssh/id_rsa .ssh/id_rsa.pub ubuntu-fs/root/.ssh/
 
+mv ubuntu-fs/usr/sbin/service ubuntu-fs/usr/sbin/service.old
+
 if [ -d "termux-util" ]
 then
 
