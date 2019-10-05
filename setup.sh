@@ -9,3 +9,5 @@ apt install openssh-server python3 python3-pip blender vim tmux apache2 -y
 add-apt-repository ppa:openjdk-r/ppa
 apt update
 apt install openjdk-8-jdk -y
+wget https://launcher.mojang.com/download/Minecraft.deb
+dpkg -i Minecraft.deb
