@@ -1,0 +1,3 @@
+#ubuntu-fs/usr/sbin/
+#!/bin/bash
+termux cp "ubuntu-fs/$(pwd)/$1" "storage/shared/$2"
