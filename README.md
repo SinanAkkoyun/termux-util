@@ -1,5 +1,8 @@
 #termux-util/
 
+WARNING: THIS REPO IS OUTDATED AND COULD BRICK YOUR TERMUX OR CAUSE DAMAGE
+Refactor as you need and PR if you want lel
+
 all scripts that make life easier
 
 execute this:
